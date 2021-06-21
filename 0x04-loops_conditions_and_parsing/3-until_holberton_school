@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#prints Holberton School using until loop x10
+i="10"
+until [ $i -eq 0 ]
+        do
+        echo Holberton School
+        i=$[i-1]
+        done
+~                      #!/usr/bin/env bash

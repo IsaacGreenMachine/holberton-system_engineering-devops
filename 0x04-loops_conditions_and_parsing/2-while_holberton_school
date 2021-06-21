@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#prints Holberton School using while loop x10
+i="10"
+while [ $i -ne 0 ]
+	do
+	echo Holberton School
+	i=$[i-1]
+	done
