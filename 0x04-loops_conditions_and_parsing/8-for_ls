@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#script to display current dir in list format cuts off first number
 for i in *
 do echo "$i" | cut -d - -f 2
 done
