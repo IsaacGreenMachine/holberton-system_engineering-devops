@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-#commment
+#kills "7-highlander"
+i=$(pgrep -f "highlander")
+kill -9 "$i"
