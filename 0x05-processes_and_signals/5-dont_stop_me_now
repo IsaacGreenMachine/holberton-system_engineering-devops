@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
 #commment
+i=$(pgrep -f "infinity")
+kill $i 
