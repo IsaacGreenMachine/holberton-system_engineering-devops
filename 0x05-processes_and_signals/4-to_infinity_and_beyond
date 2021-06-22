@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
-#commment
+#infinite loop
+while :
+do
+	echo To infinity and beyond
+	sleep 2
+done
