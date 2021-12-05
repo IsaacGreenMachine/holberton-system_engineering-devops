@@ -8,5 +8,5 @@ echo 'Hello World!' | sudo tee /var/www/html/index.html
 find="\tlocation / {"
 replace="\tlocation /redirect_me {\n\t\treturn 301 \$scheme://https://youtu.be/uTyu3HwL-7Y;\n\t}\n\n\tlocation / {"
 #adds return statement to nginx/sites-available./default folder with sed command. redirects to youtube.
-sudo sed -i "s@^$searchString@$stringReplace@" /etc/nginx/sites-available/default
+sudo sed -i "s@^$find@$replace@" /etc/nginx/sites-available/default
 sudo service nginx restart
