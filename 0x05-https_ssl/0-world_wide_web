@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 # prints dig info on given domain
 do_dig () {
+REC=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk '{ print $4 }')
+DEST=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk '{ print $5 }')
+echo "The subdomain $2 is a ${REC:1} record and points to ${DEST:1}"
+}
+
 if [ -z "$2" ]
 then
 do_dig "$1" "www"
@@ -8,10 +13,5 @@ do_dig "$1" "lb-01"
 do_dig "$1" "web-01"
 do_dig "$1" "web-02"
 else
-REC=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk '{ print $4 }')
-DEST=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk '{ print $5 }')
-echo "The subdomain $2 is a ${REC:1} record and points to ${DEST:1}"
-fi
-}
-
 do_dig "$1" "$2"
+fi
