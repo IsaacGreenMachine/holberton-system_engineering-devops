@@ -15,3 +15,4 @@ do_dig "$1" "web-02"
 else
 do_dig "$1" "$2"
 fi
+
