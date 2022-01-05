@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """returns information about employee progress"""
 import json
-from urllib import request
 import sys
+from urllib import request
 
 
 def getData(empID):
