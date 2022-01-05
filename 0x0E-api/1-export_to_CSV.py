@@ -19,7 +19,6 @@ def getData(empID):
             empUsername = loadedResponse.get("username")
             doneTasks = sum(map(lambda x: x.get("completed"), loadedTodo))
             with open('{}.csv'.format(empID), 'w') as f:
-                f.write("test")
                 csvwriter = csv.writer(f, delimiter=",", quoting=csv.QUOTE_ALL)
                 for task in loadedTodo:
                     csvwriter.writerow([task.get("userId"),
