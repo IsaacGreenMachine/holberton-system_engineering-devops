@@ -11,8 +11,8 @@ def getData(empID):
     userUrl = "https://jsonplaceholder.typicode.com/users/{}".format(empID)
     with request.urlopen(tdUrl) as todoResponse:
         with request.urlopen(userUrl) as response:
-            loadedTodo = json.loads(todoResponse.read())
-            loadedResponse = json.loads(response.read())
+            loadedTodo = json.loads(todoResponse.read().decode('utf-8'))
+            loadedResponse = json.loads(response.read().decode('utf-8'))
             employeeName = loadedResponse.get("name")
             numTasks = len(loadedTodo)
             doneTasks = sum(map(lambda x: x.get("completed"), loadedTodo))
